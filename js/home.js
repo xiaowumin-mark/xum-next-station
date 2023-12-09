@@ -4,7 +4,7 @@ window.onload = function () {
         keyboard: false
     });
     $.ajax({
-        url: './modal.json',
+        url: './dataTest/modal.json',
         type: 'get',
         success: function (res) {
             if (res.v !== app_version) {
