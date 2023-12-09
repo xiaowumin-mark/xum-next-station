@@ -50,9 +50,26 @@ body {
     margin-right: 19px;
     width: calc(100% - 36px);
     height: 90px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     font-size: 11px;
+    overflow: hidden;
+}
+
+.box_top_linesvg{
+    float: left;
+    margin-left: 1px;
+    margin-top: 9px;
+}
+
+.top-img{
+    position: fixed;
+    top: -1px;
+}
+
+.body_gg{
+    padding-top: 210px;
+    padding-bottom: 15px;
+}
+
+.homemodal_main{
+    height: 200px;
 }

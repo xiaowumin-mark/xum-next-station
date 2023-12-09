@@ -1,0 +1,19 @@
+{
+    "title":"有新版本安装",
+    "main":"<h1>你好</h1><p>你好</p>",
+    "btn":[
+        {
+            "text": "前往", 
+            "ways":
+                { "href": "more.html", "operate": "nodal" },
+            "color": "black" 
+        },
+        {
+            "text": "取消",
+            "ways":
+                { "href": "#", "operate": "modal" },
+            "color": "red"
+        }
+    ],
+    "v":"1.0.1"
+}
