@@ -1,0 +1,74 @@
+.store-s{
+	height: 5.5rem;
+}
+.prodDTlt{
+	padding: 0.4rem;
+}
+.prodDTlt h3 {
+    font-size: 0.5rem;
+    font-weight: bold;
+    line-height: 24px;
+    color: #3a3a3a;
+}
+.prodDTlt p i {
+    display: inline-block;
+    font-size: 0.4rem;
+    color: #929191;
+}
+.prodDBtn {
+    width: 100%;
+	background-color: #fff;
+	border-top: 1px solid #dfdfdf;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9999999;
+}
+.prodDBtn ul {
+    line-height: 40px;
+    background: #fff;
+    font-size: 12px;
+    height: 47px;
+    padding-left: 2.6%;
+}
+.prodDBtn ul li {
+    height: 47px;
+    line-height: 47px;
+}
+.prodDBtn ul li.pbJF {
+    color: #F6416C;
+    float: left;
+    padding: 0 4px;
+}
+.prodDBtn ul li.pbJF b {
+    font-size: .55rem;
+    margin-right: 2px;
+}
+.prodDBtn ul li.pbBtn {
+    float: right;
+    /* background: #F6416C; */
+	background: #d7d9da;
+    color: #fff;
+    font-size: 0.5rem;
+    padding: 0px 26px;
+}
+.text_duihuan .h1{
+	font-size: 0.45rem;
+	font-weight: 400;
+	color: #777;
+	border-radius: 1.375rem;
+	text-align: center;
+	padding: 0 0.6rem;
+	display: inline-block;
+	height: 0.8rem;
+	line-height: 0.85rem;
+	background: rgba(143, 170, 64, 0.25);
+	margin-top: 0.3rem;
+	margin-bottom: 4%;
+}
+.text_duihuan p{
+	color: #666;
+	line-height: 0.6rem;
+	font-weight: 300;
+	font-size: 0.4rem;
+}

@@ -1,0 +1,118 @@
+.divider {
+	margin-top: 4%;
+}
+
+
+
+.myTableWrapper {
+	width: 800px;
+	height: 500px
+}
+
+.height250 {
+	height: 250px;
+	overflow-x: auto;
+	overflow-y: auto
+}
+
+.height400 {
+	height: 12rem;
+	overflow-x: auto;
+	overflow-y: auto
+}
+
+.fancyTable td,
+.fancyTable th {
+	/* border: 1px solid #ebeef5; */
+	padding: 5px
+}
+
+.fancyTable {
+	font-family: helvetica neue, Helvetica, Arial, sans-serif
+}
+
+.fancyTable tbody tr td {
+	background-color: #fff;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.0) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(51%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.0)));
+	color: #262c31;
+	font-size: 0.38rem;
+	text-align: center;
+}
+
+.fancyTable tbody tr.odd td {
+	background-color: #F2F9FF;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.0) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(51%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.0)))
+}
+
+.fancyTable thead tr th,
+.fancyTable thead tr td,
+.fancyTable tfoot tr th,
+.fancyTable tfoot tr td {
+	background-color: #F2F9FF;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.0) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(51%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.0)));
+	color: #606266;
+	font-size: 0.4rem;
+	font-weight: 700;
+	text-shadow: 0 1px 1px #e8ebee;
+	text-align: center;
+}
+
+/* .fancyDarkTable .numeric {
+	text-align: right
+} */
+
+.fancyDarkTable td,
+.fancyDarkTable th {
+	border: 1px solid #000;
+	padding: 5px
+}
+
+.fancyDarkTable thead tr th {
+	padding: 10px 5px
+}
+
+.fancyDarkTable {
+	font-family: helvetica neue, Helvetica, Arial, sans-serif
+}
+
+.fancyDarkTable tbody tr td {
+	background-color: #48535e;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.02) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.0)), color-stop(100%, rgba(255, 255, 255, 0.02)));
+	border-bottom-color: #22272e;
+	border-top-color: #708090;
+	border-right-color: #000;
+	border-left-color: #3c454f;
+	padding: 10px 5px 30px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	text-shadow: 0 -1px 1px #000
+}
+
+.fancyDarkTable tbody tr.odd td {
+	background-color: #3c454f;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.02) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.0)), color-stop(100%, rgba(255, 255, 255, 0.02)));
+	border-right-color: #000
+}
+
+.fancyDarkTable thead tr th,
+.fancyDarkTable tfoot tr td {
+	background-color: #0b0d10;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.0) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(51%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.0)));
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	text-shadow: 0 -1px 1px #000
+}
+
+.fancyDarkTable .fht-head {
+	-webkit-box-shadow: 0 5px 10px #000;
+	z-index: 1;
+	position: relative
+}

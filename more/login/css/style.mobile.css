@@ -1,0 +1,285 @@
+
+
+.x12 {
+	width: 100%;
+	float: left
+}
+
+.display-none {
+	display: none
+}
+.m-form-gp{
+	padding: 0.4rem;
+	background: #fff;
+}
+
+.m-form-gp .m-from-tips {
+	font-size: 0.4rem;
+	color: #000;
+	margin-bottom: 8px
+}
+
+.m-form-gp .m-from-tips span {
+	color: #fe0000
+}
+
+.m-form-gp .m-from-input textarea {
+	width: 100%;
+	height: 84px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: solid 1px #e0e0e0;
+	padding: 10px;
+}
+
+.m-form-gp .m-from-input input {
+	width: 92%;
+	height: 37px !important;
+	line-height: 37px !important;
+	border: 1px solid #dcdfe6 !important;
+	border-radius: 3px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-size: 0.36rem;
+}
+
+.select-xi i {
+	position: absolute;
+	top: 67px;
+	right: 17px;
+	z-index: 3;
+	font-size: 20px;
+	color: #696974;
+}
+
+.m-from-input input[disabled] {
+	background-color: #fff
+}
+
+.m-form-gp-bp {
+	margin-top: 20px
+}
+
+.m-form-gp-bp>div {
+	margin-bottom: 10px
+}
+
+.ck-checked {
+	padding-left: 20px
+}
+
+.m-form-ckgp>div {
+	float: left;
+	position: relative
+}
+
+.m-form-ckgp>div a {
+	color: #16a951;
+	font-size: 12px
+}
+
+.ck-checked label {
+	cursor: pointer;
+	font-size: 13px
+}
+
+.ck-checked input[type=checkbox] {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	z-index: 3;
+	width: 15px;
+	height: 15px;
+	opacity: 0;
+	cursor: pointer
+}
+
+.ck-checked input[type=checkbox]+span {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border: solid 1px #dedede;
+	text-align: center;
+	line-height: 14px;
+	cursor: pointer
+}
+
+.ck-checked input[type=checkbox]+span i {
+	color: #fe0000;
+	font-size: 18px;
+	opacity: 0;
+	position: absolute;
+	left: -2px;
+	top: -2px
+}
+
+.ck-checked input[type=checkbox]:checked+span i {
+	display: block;
+	opacity: 1
+}
+
+.sub-form {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 48px;
+	-webkit-box-shadow: 0 0 16px 0 rgba(171, 171, 171, .16);
+	box-shadow: 0 0 16px 0 rgba(171, 171, 171, .16);
+	background-color: #fff;
+	border-top: 1px solid rgba(171, 171, 171, .2)
+}
+
+.sub-form>button {
+	height: 100%;
+	font-size: 18px;
+	letter-spacing: 1px;
+	background-color: #16a951;
+	border: 1px solid #16a951;
+	color: #fff;
+	width: 100%;
+	float: left
+}
+
+.m-form-chbox-gp .m-from-tips span {
+	color: #fe0000
+}
+
+.m-form-chbox-gp .m-form-chbox-glist {
+	margin-top: 10px
+}
+
+.m-form-chbox-gp .m-form-chbox-glist>div {
+	position: relative;
+	float: left;
+	margin-right: 10px
+}
+
+.select-moob {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10
+}
+
+.select-moob-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1
+}
+
+.select-moob-container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 200px;
+	background-color: #fff;
+	z-index: 99999999;
+	animation: aclstop .3s 1 forwards;
+	-webkit-animation: aclstop .3s 1 forwards;
+	-webkit-overflow-scrolling: touch
+}
+
+@-webkit-keyframes aclstop {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+		-moz-transform: translateY(100px);
+		-ms-transform: translateY(100px);
+		-webkit-transform: translateY(100px)
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0)
+	}
+}
+
+@keyframes aclstop {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+		-moz-transform: translateY(100px);
+		-ms-transform: translateY(100px);
+		-webkit-transform: translateY(100px)
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0)
+	}
+}
+
+.select-moob-title {
+	height: 48px;
+	background-color: #f5f5f5;
+	padding: 0 20px
+}
+
+.select-moob-title>div {
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: #212121;
+	line-height: 48px;
+	cursor: pointer
+}
+
+.select-moob-title .cancel {
+	float: left
+}
+
+.select-moob-title .determine {
+	float: right
+}
+
+.select-moob-content {
+	height: 150px;
+	overflow: auto
+}
+
+.select-moob-content .sw-select {
+	height: 144px;
+	position: relative
+}
+
+.select-moob-content .sw-select:before {
+	content: '';
+	position: absolute;
+	top: 33%;
+	left: 0;
+	right: 0;
+	height: 48px;
+	border-top: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1
+}
+
+.select-moob-content .swiper-slide {
+	text-align: center;
+	line-height: 48px;
+	opacity: .5;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.select-moob-content .swiper-slide-active {
+	opacity: 1;
+	font-size: 15px
+}

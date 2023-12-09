@@ -1,0 +1,147 @@
+.fileUploadContent{
+	display: flex
+}
+
+.fileUploadContent .box {
+	width: 76px;
+	height: 76px;
+}
+
+.fileUploadContent .fileItem {
+	width: 76px;
+	height: 76px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 5px;
+	vertical-align: top
+}
+
+.fileUploadContent .fileItem .imgShow {
+	width: 76px;
+	height: 76px;
+	text-align: center
+}
+
+.fileUploadContent .fileItem .imgShow i {
+	font-size: 120px;
+	position: relative;
+	top: -30px;
+	z-index: 2
+}
+
+.fileUploadContent .fileItem .imgShow img {
+	width: 100%;
+	height: 100%
+}
+
+.fileUploadContent .fileItem .imgShow .fileType {
+	color: #fff;
+	font-size: 20px;
+	position: relative;
+	top: 63px;
+	z-index: 3;
+	left: -18px
+}
+
+.fileUploadContent .fileItem .progress {
+	height: 10px;
+	width: 100%
+}
+
+.fileUploadContent .fileItem .progress>.progress_inner {
+	background-color: #09f;
+	width: 0%;
+	height: 10px;
+	border-radius: 10px
+}
+
+.fileUploadContent .fileItem .progress .error {
+	background-color: red
+}
+
+.fileUploadContent .fileItem .status {
+	font-size: 15px;
+	text-align: center
+}
+
+.fileUploadContent .fileItem .status i {
+	display: block;
+	position: relative;
+	bottom: 2rem;
+	left: 0.6rem;
+	padding: 2px 5px;
+	color: red;
+	margin-left: 3px;
+	border-radius: 5px;
+	font-size: 15px;
+	cursor: pointer
+}
+
+.fileUploadContent .fileItem .fileName {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	overflow: hidden;
+	clear: both;
+	padding: 2px
+}
+
+.fileUploadContent .uploadBts {
+	text-align: left;
+	height: 40px
+}
+
+.fileUploadContent .uploadBts>div {
+	margin-right: 15px
+}
+
+.fileUploadContent .uploadBts>div .selectFileBt {
+	border: none;
+	color: #fff;
+	padding: 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	cursor: pointer
+}
+
+.fileUploadContent .uploadBts>div .selectFileBt:hover {
+	color: #ddd
+}
+
+.fileUploadContent .uploadBts>div i {
+	font-size: 35px;
+	color: #09f;
+	cursor: pointer
+}
+
+.fileUploadContent .subberProgress {
+	padding: 5px;
+	display: none
+}
+
+.fileUploadContent .subberProgress .progress {
+	border: solid thin #09f;
+	height: 20px;
+	width: 100%;
+	border-radius: 20px;
+	overflow: hidden
+}
+
+.fileUploadContent .subberProgress .progress>div {
+	background-color: #09f;
+	width: 0%;
+	height: 20px;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+	text-align: center;
+	color: #fff;
+	transition: width .5s;
+	-moz-transition: width .5s;
+	-webkit-transition: width .5s;
+	-o-transition: width .5s;
+	transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;
+	-o-transition-timing-function: linear
+}
