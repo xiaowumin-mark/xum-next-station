@@ -12,7 +12,7 @@ function ShowModal(btn_array, main_text, main_title) {
                 btn.innerHTML = btn.innerHTML + `
             <button onclick="window.location.href='${btn_array[i].ways.href}'" type="button" class="btn btn-light btn-sm" style="color: ${btn_array[i].color};" data-bs-dismiss="${btn_array[i].ways.operate}">${btn_array[i].text}</button>
             `
-            }else{
+            } else {
                 btn.innerHTML = btn.innerHTML + `
             <button onclick="${btn_array[i].ways.func}" type="button" class="btn btn-light btn-sm" style="color: ${btn_array[i].color};" data-bs-dismiss="${btn_array[i].ways.operate}">${btn_array[i].text}</button>
             `
@@ -67,3 +67,63 @@ function getUrlParams(name) { // 不传name返回所有值，否则返回对应�
     // 返回结果
     return nameres;
 }
+
+function getYm() {
+    $.ajax({
+        url: 'config.json',
+        type: 'get',
+        success: function (res) {
+            window.localStorage.setItem("ym", res.server_domain_name)
+        }
+    });
+
+}
+
+
+function initViewer() {
+    // 设置viewer的配置
+    const options = {
+        url: "src",
+        toolbar: false,
+        navbar: false,
+        title: false
+    };
+
+    // 获取所有class为img_true的img标签
+    const imgElements = document.querySelectorAll('.img_true');
+
+    // 遍历每个img标签，为其添加点击事件
+    imgElements.forEach(img => {
+        img.addEventListener('click', function () {
+            const viewer = new Viewer(this, options);
+            viewer.show();
+        });
+    });
+}
+
+// 预览图片
+function previewImage(imagePath) {
+    const img = new Image();
+    img.src = imagePath;
+
+    // 等待图片加载完成后进行预览
+    img.onload = function () {
+        const options = {
+            toolbar: false,
+            navbar: false,
+            title: false
+        };
+
+        const viewer = new Viewer(img, options);
+        viewer.show();
+    };
+}
+
+// 使用示例
+// 加载viewer.js
+
+// 初始化viewer，使所有class为img_true的img标签可以预览
+document.addEventListener('DOMContentLoaded', initViewer);
+
+// 调用预览图片函数，传入图片路径
+//previewImage('path/to/image.jpg');

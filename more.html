@@ -10,6 +10,9 @@
     <script src="./js/jquery/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./js/bootstrap.min.css">
+    <link rel="stylesheet" href="./js/viewer/viewer.min.css">
+    <script src="./js/viewer/viewer.min.js"></script>
+    
     <style>
         .personal-info {
             display: flex;
@@ -48,17 +51,25 @@
     <div class="personal-info">
         <div class="avatar">
             <!-- 在这里放置头像图片 -->
-            <img src="./img/tx.png" alt="头像">
+            <img class="img_true" id="user_img" src="./img/tx.png" alt="头像">
         </div>
         <div class="name">
             <!-- 在这里放置名称 -->
-            <h1>张三</h1>
+            <h1 id="user_name">请登录</h1>
         </div>
         <div class="phone">
             <!-- 在这里放置手机号 -->
-            <p>138-xxxx-xxxx</p>
+            <p id="user_phone">***********</p>
         </div>
     </div>
+
+    <div class="list-group">
+        <a href="https://www.wenjuan.com/s/UZBZJvKoX7d" class="list-group-item list-group-item-action">加入我们</a>
+        <a onclick="previewImage('img/chat.jpg')"  href="#" class="list-group-item list-group-item-action">交流群</a>
+        <a class="list-group-item list-group-item-action">设置</a>
+      
+      </div>
+
 
     <div class="footer">
         <div class="tab">
@@ -145,6 +156,7 @@
     </div>
 </body>
 <script src="./js/index.js"></script>
+<script src="./js/login.js"></script>
 <script src="./js/moer.js"></script>
 
 </html>

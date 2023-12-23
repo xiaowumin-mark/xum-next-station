@@ -1,4 +1,8 @@
 window.onload = function () {
+    getYm()
+    if (window.localStorage.getItem("if_login") == null) {
+        ShowModal(login.btn, login.main, login.title)
+    }
     $('#myModal').modal({
         backdrop: 'static',
         keyboard: false
