@@ -25,7 +25,7 @@
 
 <body>
 
-	<div class="carousel slide top-img">
+	<div id="gdImg" class="carousel slide top-img">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
 				aria-current="true" aria-label="Slide 1"></button>
@@ -58,7 +58,7 @@
 	</div>
 
 	<div class="recommend_main">
-		<div class="body_gg" id="recommend_list"><!-- 后端请求后遍历操作dom -->
+		<div style="padding-top: 210px;" class="body_gg" id="recommend_list"><!-- 后端请求后遍历操作dom -->
 			<!-- 示例 -->
 
 
@@ -81,7 +81,7 @@
 
 					北京地铁9号线（Beijing Subway Line
 					9），是中国北京市境内一条已建成运营的城市轨道交通线路，于2011年12月31日开通运营南段（郭公庄站至北京西站），2012年10月12日开通运营丰台东大街站，2012年12月30日开通运营北段（白堆子站至国家图书馆站），2013年12月21日开通运营军事博物馆站，标志色为浅绿色。
-					据2022年12月北京地铁官网显示，北京地铁9号线呈南 ......点击查看详情>>
+					据2022年12月北京地铁官网显示，北京地铁9号线呈南
 
 				</div>
 			</div>
@@ -131,7 +131,7 @@
 				</a>
 			</div>
 			<div class="tab">
-				<a href="more/index.html">
+				<a href="more.html">
 					<i class="icon">
 						<img src="img/Navigation bar/ico not selected/more.png" />
 					</i>
@@ -165,12 +165,31 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
+			<div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+				aria-atomic="true" data-bs-delay="3000">
+				<div class="d-flex">
+					<div class="toast-body" id="Err_p">
+	
+					</div>
+					<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+						aria-label="Close"></button>
+				</div>
+			</div>
+		</div>
 </body>
 
 <script>
-	let app_version = '1.0.1'
+	let app_version = '1.1.1'
 </script>
-<script src="./js/index_modal.js"></script>
+<script src="./js/index.js"></script>
 <script src="./js/home.js"></script>
+<script>
+	let gdImg = document.getElementById('gdImg');
+	let str = getComputedStyle(gdImg,null).height
+	let fstr = parseFloat(str.substring(0, str.length - 2))+5
+	document.getElementById("recommend_list").style.paddingTop = fstr+"px"
+</script>
 
 </html>

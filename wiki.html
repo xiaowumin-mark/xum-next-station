@@ -18,16 +18,32 @@
 	<link rel="stylesheet" href="./js/bootstrap.min.css">
 	<script src="./js/jquery/jquery.min.js"></script>
 	<link rel="stylesheet" href="./css/wiki.css">
-	<script src="./js/getUrlParams.js"></script>
+	<script src="./js/index.js"></script>
 	<script src="./js/wiki.js"></script>
 </head>
 
 <body>
+	<div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
+        <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" data-bs-delay="3000">
+            <div class="d-flex">
+                <div class="toast-body" id="Err_p">
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+	
 	<div id="wiki_group">
 
 		
 
-		
+
 	</div>
 
 
@@ -69,7 +85,7 @@
 			</a>
 		</div>
 		<div class="tab">
-			<a href="./more/index.html">
+			<a href="more.html">
 				<i class="icon">
 					<img src="./img/Navigation bar/ico not selected/more.png" />
 				</i>

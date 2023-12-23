@@ -5,14 +5,16 @@
         {
             "text": "前往", 
             "ways":
-                { "href": "more.html", "operate": "nodal" },
+                { "href": "#", "operate": "modal","func":"err('s','zsfdvbzsfbvse')" },
             "color": "black" 
+            
         },
         {
             "text": "取消",
             "ways":
-                { "href": "#", "operate": "modal" },
+                { "href": "#", "operate": "modal", "func":""},
             "color": "red"
+            
         }
     ],
     "v":"1.0.1"
