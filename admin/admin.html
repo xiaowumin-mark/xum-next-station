@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下一站-admin</title>
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/viewer/viewer.min.css">
+    <script src="../js/viewer/viewer.min.js"></script>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../js/wangeditor.css">
+    <script src="../js/wangeditor.js"></script>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        .sjsj {
+            font-size: 50px;
+            /*设置文字大小*/
+            color: #3366FF;
+            /*设置文字颜色*/
+            text-shadow: 0 8px 10px #6699FF;
+            /*设置文字阴影*/
+            font-weight: bolder;
+            /*设置文字宽度*/
+            text-align: center;
+            /*设置文字居中*/
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">下一站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="?page=home">数据</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=gg">公告</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" style="width: 100%;height:calc(100% - 100px);display: none;">
+
+
+
+
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <div class="card" style="width: 18rem;float: left;">
+                        <div class="card-body">
+                            <h5 class="card-title">软件安装数量：</h5>
+
+                            <h3 class="sjsj">123</h3>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">注册用户数量:</h5>
+
+                            <h3 class="sjsj">123</h3>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <div class="card" style="width: 18rem;float: left;">
+                        <div class="card-body">
+                            <h5 class="card-title">地图下载数量:</h5>
+
+                            <h3 class="sjsj">123</h3>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">公告数量:</h5>
+
+                            <h3 class="sjsj">123</h3>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div id="gg" style="width: 100%;height:calc(100% - 100px);display: none;">
+        <div style="width: 50%;height: 100%;float: left;">
+            <div class="body_gg" id="recommend_list" style="overflow-x: hidden;overflow-y: scroll;height: 100%;">
+                <!-- 后端请求后遍历操作dom -->
+
+            </div>
+        </div>
+        <div style="width: 50%;height: 100%;float: left;">
+            <div style="height: 70%;" id="editor—wrapper">
+                <div id="toolbar-container"><!-- 工具栏 --></div>
+                <div style="height: 50%;" id="editor-container"><!-- 编辑器 --></div>
+            </div>
+            <div class="input-group mb-3">
+                <input id="GGtit" type="text" class="form-control" placeholder="公告标题" aria-label="公告标题"
+                    aria-describedby="button-addon2">
+                <button onclick="goGG()" class="btn btn-outline-secondary" type="button" id="button-addon2">提交</button>
+            </div>
+            <div id="htmlGG" style="display: none;">
+
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;height:calc(100% - 100px);display: none;">
+
+    </div>
+</body>
+<script src="../js/admin.js"></script>
+
+</html>

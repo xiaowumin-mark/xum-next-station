@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下一站-admin</title>
+
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/viewer/viewer.min.css">
+    <script src="../js/viewer/viewer.min.js"></script>
+    <script src="../js/index.js"></script>
+
+</head>
+
+<body>
+
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div style="width: 600px;" class="card">
+            <div class="card-body">
+                <h4 style="text-align: center;">下一站管理面板-登录</h4>
+                <br>
+                <div class="mb-3 row">
+                    <label for="admin_username" class="col-sm-2 col-form-label">用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="admin_username">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="admin_pwd" class="col-sm-2 col-form-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="admin_pwd">
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button id="adminlogin" class="btn btn-primary" type="button">登录</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
+        <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" data-bs-delay="3000">
+            <div class="d-flex">
+                <div class="toast-body" id="Err_p">
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    if(window.localStorage.getItem("admin_name") != null){
+        location.href = "admin.html"
+        
+    }
+    $("#adminlogin").on("click", function () {
+        if ($("#admin_username").val() == "" || $("#admin_pwd").val() == "") {
+            err("e", "请输入内容！")
+        } else {
+            $.ajax({
+                url: window.localStorage.getItem("ym") + "api/users/adminLogin",
+                type: 'post',
+                data: {
+                    admin_name: $("#admin_username").val(),
+                    admin_pwd: $("#admin_pwd").val()
+                },
+                success: function (res) {
+                    if (res.message == "success") {
+                        err("s", "登录成功！")
+                        window.localStorage.setItem("admin_name", $("#admin_username").val())
+                        window.localStorage.setItem("admin_pwd", $("#admin_pwd").val())
+                        location.href = "admin.html"
+                    } else {
+                        err("e", "用户名或密码错误")
+                    }
+                }
+            });
+        }
+    })
+</script>
+
+</html>
