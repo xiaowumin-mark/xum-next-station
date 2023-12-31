@@ -11,8 +11,28 @@
 	<link rel="stylesheet" href="./css/home.css">
 	<script src="./js/index.js"></script>
 	<script src="./js/wiki.js"></script>
+	<link rel="stylesheet" href="./js/viewer/viewer.min.css">
+    <script src="./js/viewer/viewer.min.js"></script>
+    <script src="./js/index.js"></script>
 </head>
 <body>
+	<div class="card" style="width: 100%;">
+		<br>
+		<h3 style="text-align: center;">路网图</h3>
+		<img style="width: 100px;height: 100px;margin: 0 auto;" src="./img/lwt.png" alt="" srcset="">
+		<br>
+		<div class="d-grid gap-2 col-6 mx-auto"><button onclick="previewImage('./img/lwt.png')" type="button" class="btn btn-primary">查看</button></div>
+		<br>
+	</div>
+	<div class="card" style="width: 100%;">
+		<br>
+		<h3 style="text-align: center;">配线图</h3>
+		<img style="width: 100px;height: 100px;margin: 0 auto;" src="./img/MTR.svg" alt="" srcset="">
+		<br>
+		<div class="d-grid gap-2 col-6 mx-auto"><button onclick="previewImage('./img/MTR.svg')" type="button" class="btn btn-primary">查看</button></div>
+		<br>
+	</div>
+
 	<div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
         <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
             aria-atomic="true" data-bs-delay="3000">

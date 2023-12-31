@@ -90,7 +90,7 @@ function initViewer() {
     };
 
     // 获取所有class为img_true的img标签
-    const imgElements = document.querySelectorAll('.img_true');
+    const imgElements = document.querySelectorAll('#img');
 
     // 遍历每个img标签，为其添加点击事件
     imgElements.forEach(img => {
@@ -127,3 +127,16 @@ document.addEventListener('DOMContentLoaded', initViewer);
 
 // 调用预览图片函数，传入图片路径
 //previewImage('path/to/image.jpg');
+
+function setImgIds() {
+    // 获取ID为main的元素下的所有img标签
+    const mainElement = document.getElementById('main');
+    const imgElements = mainElement.querySelectorAll('img');
+
+    // 为每个img元素设置onclick属性
+    imgElements.forEach(img => {
+        img.onclick = function() {
+            previewImage(this.src);
+        };
+    });
+}

@@ -13,7 +13,7 @@
     <script src="../js/viewer/viewer.min.js"></script>
     <script src="../js/index.js"></script>
     <link rel="stylesheet" href="../css/home.css">
-    
+
     <script src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
     <style>
         html,
@@ -54,7 +54,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?page=gg">公告</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=wiki">百科</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -72,7 +74,7 @@
                         <div class="card-body">
                             <h5 class="card-title">软件安装数量：</h5>
 
-                            <h3 class="sjsj">123</h3>
+                            <h3 id="downs" class="sjsj">0</h3>
                         </div>
 
                     </div>
@@ -82,7 +84,7 @@
                         <div class="card-body">
                             <h5 class="card-title">注册用户数量:</h5>
 
-                            <h3 class="sjsj">123</h3>
+                            <h3 id="users" class="sjsj">0</h3>
                         </div>
 
                     </div>
@@ -93,9 +95,9 @@
                 <li class="list-group-item">
                     <div class="card" style="width: 18rem;float: left;">
                         <div class="card-body">
-                            <h5 class="card-title">地图下载数量:</h5>
+                            <h5 class="card-title">百科文章数量:</h5>
 
-                            <h3 class="sjsj">123</h3>
+                            <h3 id="wzs" class="sjsj">0</h3>
                         </div>
 
                     </div>
@@ -105,7 +107,7 @@
                         <div class="card-body">
                             <h5 class="card-title">公告数量:</h5>
 
-                            <h3 class="sjsj">123</h3>
+                            <h3 id="ggs" class="sjsj">0</h3>
                         </div>
 
                     </div>
@@ -122,8 +124,8 @@
                     发布公告
                 </button>
             </div>
-            <div class="body_gg"  style="overflow-x: hidden;overflow-y: scroll;height: 100%;">
-                
+            <div class="body_gg" style="overflow-x: hidden;overflow-y: scroll;height: 100%;">
+
 
 
                 <table class="table">
@@ -135,7 +137,7 @@
                     </thead>
                     <tbody id="recommend_list">
                         <!-- 后端请求后遍历操作dom -->
-                        
+
                     </tbody>
                 </table>
 
@@ -170,8 +172,57 @@
         </div>
 
     </div>
-    <div style="width: 100%;height:calc(100% - 100px);display: none;">
+    <div id="wiki" style="width: 100%;height:calc(100% - 100px);display: none;">
+        <link rel="stylesheet" href="../css/wiki.css">
+        <div id="wiki_group" style="width: 50%;height: 100%;margin: 0 auto;">
 
+        </div>
+
+        <div id="newWiki_modal" tabindex="-1" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">添加公告</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="wikiGroupName" class="form-label">百科板块名称</label>
+                            <input type="text" class="form-control" id="wikiGroupName" aria-describedby="emailHelp">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button id="newWiki_modall" type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="newWikiArt_modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-xl">
+                <div style="height: 600px" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">新文章</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div style="height: calc(100% - 40px);" id="editor—wrapper">
+                            <div style="height: 50%;" id="wz"><!-- 编辑器 --></div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input id="wztit" type="text" class="form-control" placeholder="文章标题" aria-label="公告标题"
+                                aria-describedby="button-addon2">
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
+                        <button onclick="pushArticle2()" type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 

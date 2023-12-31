@@ -29,6 +29,7 @@ window.onload = function () {
     });
 
     setTimeout(function () {
+        $("#recommend_list").empty()
         $.ajax({
             url: window.localStorage.getItem('ym') + "getGG",
             type: 'post',
