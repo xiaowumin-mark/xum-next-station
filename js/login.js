@@ -43,6 +43,7 @@ function userLogin(){// 处理用户登录操作
                 window.localStorage.setItem("user_phone", res.main.user_phone)
                 window.localStorage.setItem("user_name",res.main.user_name)
                 window.localStorage.setItem("if_login",true)
+                location.reload();
             } else {
                 err("e", res.message)
             }

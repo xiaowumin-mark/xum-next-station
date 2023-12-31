@@ -13,8 +13,8 @@
     <script src="../js/viewer/viewer.min.js"></script>
     <script src="../js/index.js"></script>
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../js/wangeditor.css">
-    <script src="../js/wangeditor.js"></script>
+    
+    <script src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
     <style>
         html,
         body {
@@ -116,26 +116,59 @@
 
     </div>
     <div id="gg" style="width: 100%;height:calc(100% - 100px);display: none;">
-        <div style="width: 50%;height: 100%;float: left;">
-            <div class="body_gg" id="recommend_list" style="overflow-x: hidden;overflow-y: scroll;height: 100%;">
-                <!-- 后端请求后遍历操作dom -->
+        <div style="width: 100%;height: 100%;">
+            <div style="width: 100%;height: 40px;">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#GGmodal">
+                    发布公告
+                </button>
+            </div>
+            <div class="body_gg"  style="overflow-x: hidden;overflow-y: scroll;height: 100%;">
+                
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">公告</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recommend_list">
+                        <!-- 后端请求后遍历操作dom -->
+                        
+                    </tbody>
+                </table>
+
 
             </div>
         </div>
-        <div style="width: 50%;height: 100%;float: left;">
-            <div style="height: 70%;" id="editor—wrapper">
-                <div id="toolbar-container"><!-- 工具栏 --></div>
-                <div style="height: 50%;" id="editor-container"><!-- 编辑器 --></div>
-            </div>
-            <div class="input-group mb-3">
-                <input id="GGtit" type="text" class="form-control" placeholder="公告标题" aria-label="公告标题"
-                    aria-describedby="button-addon2">
-                <button onclick="goGG()" class="btn btn-outline-secondary" type="button" id="button-addon2">提交</button>
-            </div>
-            <div id="htmlGG" style="display: none;">
 
+
+        <div id="GGmodal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-xl">
+                <div style="height: 600px" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">发布公告</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div style="height: calc(100% - 40px);" id="editor—wrapper">
+                            <div style="height: 50%;" id="bj"><!-- 编辑器 --></div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input id="GGtit" type="text" class="form-control" placeholder="公告标题" aria-label="公告标题"
+                                aria-describedby="button-addon2">
+                            <button onclick="goGG()" class="btn btn-outline-secondary" type="button"
+                                id="button-addon2">提交</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
     <div style="width: 100%;height:calc(100% - 100px);display: none;">
 
@@ -143,8 +176,8 @@
 
 
     <div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
-        <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert"
-            aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+        <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" data-bs-delay="3000">
             <div class="d-flex">
                 <div class="toast-body" id="Err_p">
 
