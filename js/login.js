@@ -34,7 +34,8 @@ function userLogin(){// 处理用户登录操作
         data: JSON.stringify({
             "user_name":userName,
             "user_pwd":userPwd,
-            "user_phone":userPhone
+            "user_phone":userPhone,
+            "type":false
         }),
         success: function (res) {
             //console.log(res);
