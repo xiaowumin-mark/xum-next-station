@@ -26,8 +26,9 @@ function userLogin(){// 处理用户登录操作
     let userName = $("#login_name").val();
     let userPhone = $("#login_phone").val();
     let userPwd = $("#login_pwd").val();
+    console.log(userName, userPhone, userPwd)
     $.ajax({
-        url: window.localStorage.getItem('ym') + "api/users/login",
+        url: Config.ym + Config.routes[3],
         type: 'post',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -39,11 +40,13 @@ function userLogin(){// 处理用户登录操作
             //console.log(res);
             if (res.message == "success") {
                 err("s", "登录成功~")
+                //console.log(555)
                 window.localStorage.setItem("user_pwd",res.main.user_pwd)
                 window.localStorage.setItem("user_phone", res.main.user_phone)
                 window.localStorage.setItem("user_name",res.main.user_name)
                 window.localStorage.setItem("if_login",true)
-                location.reload();
+                setTimeout(function(){location.reload();},1000)
+                
             } else {
                 err("e", res.message)
             }
@@ -56,7 +59,7 @@ function userSignup(){// 处理用户注册操作
     let userPhone = $("#login_phone").val();
     let userPwd = $("#login_pwd").val();
     $.ajax({
-        url: window.localStorage.getItem('ym') + "api/users/signup",
+        url:Config.ym +Config.routes[2],
         type: 'post',
         contentType: 'application/json',
         data: JSON.stringify({

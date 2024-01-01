@@ -1,13 +1,15 @@
 window.onload = function () {
-    wikiIndex()
+    getYm(wikiIndex)
+    //setTimeout(wikiIndex,1000)
+    //wikiIndex()
 
 
 }
 
 function goPage(page) {
-    document.getElementById('wiki_group').innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary"><div onclick="wikiIndex()" class="container"><a class="navbar-brand"href="#"><img src="./img/svg/return.svg"alt="Bootstrap"width="30"height="24"></a></div></nav>`
+    document.getElementById('wiki_group').innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary"><div onclick="wikiIndex()" class="container"><a class="navbar-brand"href="#"><img id="no_img" src="./img/svg/return.svg"alt="Bootstrap"width="30"height="24"></a></div></nav>`
     $.ajax({
-        url: window.localStorage.getItem("ym") + "getWikiList",
+        url: Config.ym + Config.routes[10],
         type: 'post',
         success: function (res) {
             $('#wiki_group').append(`<div id="wiki_wk" class="list-group"></div>`)
@@ -28,7 +30,7 @@ function goPage(page) {
 function wikiIndex() {
     document.getElementById('wiki_group').innerHTML = ""
     $.ajax({
-        url: window.localStorage.getItem("ym") + "getWikiList",
+        url: Config.ym + Config.routes[10],
         type: 'post',
         success: function (res) {
             for (let i = 0; i < res.main.length; i++) {
@@ -47,9 +49,9 @@ function wikiIndex() {
 
 function toWz(w, z) {
     
-    document.getElementById('wiki_group').innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary"><div onclick="goPage('${w}')" class="container"><a class="navbar-brand"href="#"><img src="./img/svg/return.svg"alt="Bootstrap"width="30"height="24"></a></div></nav>`
+    document.getElementById('wiki_group').innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary"><div onclick="goPage('${w}')" class="container"><a class="navbar-brand"href="#"><img id="no_img" src="./img/svg/return.svg"alt="Bootstrap"width="30"height="24"></a></div></nav>`
     $.ajax({
-        url: window.localStorage.getItem("ym") + "getWikiArticle",
+        url: Config.ym+ Config.routes[11],
         type: 'post',
         data: JSON.stringify({
             "for_wiki": w,

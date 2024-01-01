@@ -67,13 +67,20 @@ function getUrlParams(name) { // 不传name返回所有值，否则返回对应�
     // 返回结果
     return nameres;
 }
-
-function getYm() {
+let Config
+function getYm(end) {
     $.ajax({
         url: 'config.json',
         type: 'get',
         success: function (res) {
-            window.localStorage.setItem("ym", res.server_domain_name)
+            console.log(res);
+            Config = res
+            try{
+                end()
+            }
+            catch{
+                console.log("已调用此函数，但没有回调运行")
+            }
         }
     });
 
@@ -90,7 +97,7 @@ function initViewer() {
     };
 
     // 获取所有class为img_true的img标签
-    const imgElements = document.querySelectorAll('#img');
+    //const imgElements = document.querySelectorAll('#img');
 
     // 遍历每个img标签，为其添加点击事件
     imgElements.forEach(img => {
@@ -129,14 +136,19 @@ document.addEventListener('DOMContentLoaded', initViewer);
 //previewImage('path/to/image.jpg');
 
 function setImgIds() {
-    // 获取ID为main的元素下的所有img标签
-    const mainElement = document.getElementById('main');
-    const imgElements = mainElement.querySelectorAll('img');
+    // 获取id为"main"的元素  
+    var aa = document.getElementById("wiki_group");
 
-    // 为每个img元素设置onclick属性
-    imgElements.forEach(img => {
-        img.onclick = function() {
-            previewImage(this.src);
-        };
-    });
+    // 获取该元素下的所有img标签  
+    var bb = aa.getElementsByTagName("img");
+
+    // 为每个img标签添加onclick事件  
+    for (var i = 0; i < bb.length; i++) {
+        if (bb[i].id != "no_img") {
+            bb[i].onclick = function () {
+                previewImage(this.src); // 调用err函数并传入参数"s"  
+            };
+        }
+
+    }
 }

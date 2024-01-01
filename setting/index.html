@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap.min.css">
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div onclick="history.go(-1)" class="container">
+            <a class="navbar-brand" href="#">
+                <img id="no_img" src="../img/svg/return.svg" alt="Bootstrap" width="30" height="24"></a>
+        </div>
+    </nav>
+
+    <ul class="list-group list-group-flush">
+        <li onclick="location.href = 'https://www.wenjuan.com/s/UZBZJvLjqx/'" class="list-group-item">建议反馈</li>
+        <li onclick="location.href = 'privacy.html'" class="list-group-item">用户隐私政策</li>
+        <li onclick="location.href = 'application Details.html'" class="list-group-item">关于应用</li>
+        <li onclick="location.href = 'pxt/'" class="list-group-item">关于配线图</li>
+        <li onclick="exitLoginin()" class="list-group-item">退出登录</li>
+    </ul>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 1px; border: none;">
+                    <h1 style="text-align: center;" class="modal-title fs-5" id="ModalTitle">Modal title</h1>
+
+                </div>
+                <div class="modal-body" id="ModalMain">
+
+                </div>
+                <div class="modal-footer" style="padding: 0px;">
+                    <div id="ModalBtn" class="btn-group" role="group" aria-label="Basic example"
+                        style="width: 100%;margin: 0px;">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed p-3 top-0 start-50 translate-middle-x" style="z-index: 100000">
+        <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" data-bs-delay="3000">
+            <div class="d-flex">
+                <div class="toast-body" id="Err_p">
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function exitLoginin() {
+        if (window.localStorage.getItem("if_login") == null) {
+            err("e", "您现在是未登录状态，不可退出登录！")
+        } else {
+            let data = {
+                title: "请确认",
+                main: `<p>确定要退出登录吗？ &nbsp; &nbsp;</p>
+    `,
+                btn: [{
+                    text: "取消",
+                    ways:
+                        { href: "#", operate: "", func: "" },
+                    color: "black"
+                },
+                {
+                    text: "确定",
+                    ways:
+                        { href: "#", operate: "modal", func: "exitLogin()" },
+                    color: "red"
+                }
+                ]
+            }
+            ShowModal(data.btn, data.main, data.title)
+        }
+
+    }
+    function exitLogin() {
+        window.localStorage.removeItem("user_name")
+        window.localStorage.removeItem("user_pwd")
+        window.localStorage.removeItem("user_phone")
+        window.localStorage.removeItem("if_login")
+        err("s", "退出登录成功，即将跳转页面~")
+        setTimeout(function () { location.href = "../more.html" }, 2000)
+    }
+</script>
+
+</html>

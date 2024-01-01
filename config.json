@@ -1,3 +1,18 @@
 {
-    "server_domain_name":"http://127.0.0.1:9090/"
+    "ym":"http://localhost:9090/",
+	"routes":[
+		"addDone",
+		"getStatistics",
+		"api/users/signup",
+		"api/users/login",
+		"api/users/adminLogin",
+		"admin/webData",
+		"admin/publishGG",
+		"admin/delGG",
+		"admin/newWiki",
+		"admin/newWikiArticle",
+		"getWikiList",
+		"getWikiArticle",
+		"getGG"
+	]
 }

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>下一站-admin</title>
-    <script src="../js/jquery/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../js/bootstrap.min.css">
-    <link rel="stylesheet" href="../js/viewer/viewer.min.css">
-    <script src="../js/viewer/viewer.min.js"></script>
-    <script src="../js/index.js"></script>
-    <link rel="stylesheet" href="../css/home.css">
+    <script src="./static/jquery.min.js"></script>
+    <script src="./static/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./static/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/viewer.min.css">
+    <script src="./static/viewer.min.js"></script>
+    <script src="./static/index.js"></script>
+    <link rel="stylesheet" href="./static/home.css">
 
     <script src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
     <style>
@@ -173,9 +173,12 @@
 
     </div>
     <div id="wiki" style="width: 100%;height:calc(100% - 100px);display: none;">
-        <link rel="stylesheet" href="../css/wiki.css">
+        <link rel="stylesheet" href="./static/wiki.css">
         <div id="wiki_group" style="width: 50%;height: 100%;margin: 0 auto;">
-
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button onclick="$('#newWiki_modal').modal('show')" type="button"
+                    class="btn btn-primary btn-sm">添加百科</button>
+            </div>
         </div>
 
         <div id="newWiki_modal" tabindex="-1" class="modal fade">
@@ -213,7 +216,7 @@
                         <div class="input-group mb-3">
                             <input id="wztit" type="text" class="form-control" placeholder="文章标题" aria-label="公告标题"
                                 aria-describedby="button-addon2">
-                            
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -239,6 +242,6 @@
         </div>
     </div>
 </body>
-<script src="../js/admin.js"></script>
+<script src="./static/admin.js"></script>
 
 </html>
